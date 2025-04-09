@@ -14,9 +14,9 @@ function Debug() {
 function Header() {
   return (
     <div className="w-full h-full bg-bg flex items-center p-2 rounded-3xl">
-      <img src="./img/pfp.jpeg" alt="pfp" className="w-20 h-20 rounded-full" />
+      <img src="./img/pfp.jpeg" alt="pfp" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full" />
       <div id="details" className="flex flex-col justify-center ml-2 text-font">
-        <h1 className="font-black text-2xl">Akihiko Tanaka</h1>
+        <h1 className="font-black text-lg sm:text-2xl">Akihiko Tanaka</h1>
         <p id="bio">Escape the toxicity.</p>
       </div>
     </div>
@@ -65,19 +65,23 @@ export default function App() {
   return (
     <div className="w-full flex items-center justify-center bg-light font-Montserrat overflow-hidden">
       <div
-        className=" h-full min-h-screen w-3/4
-      grid grid-cols-3 grid-rows-6 gap-3 p-3 
-      border-font border-2 l:m-32 m-16 s:m-8"
+        className=" h-full min-h-screen w-full max-w-7xl
+        grid gap-3 p-3 
+        border-font border-2 
+        sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+        lg:m-32 md:m-16 sm:m-8 m-4"
       >
-        <div id="header-profile" className="col-span-1">
+        <div id="header-profile" className="lg:col-span-1 md:col-span-2 sm:col-span-1 
+        row-span-1 bg-bg rounded-3xl p-4">
           <Header />
         </div>
         <div id="socials"
-          className="col-span-2 row-span-1 bg-bg rounded-3xl p-4"
+          className="md:col-span-2 row-span-1 
+          bg-bg rounded-3xl p-4"
         >
           <div className="flex h-full flex-col">
             <h1 className="font-black text-2xl">⊹ Socials & Connections ⊹</h1>
-            <div className="grid grid-cols-2 w-full">
+            <div className="grid md:grid-cols-2 w-full">
               <Social img="./img/discord.png" alt="discord" name="@akihikooo" />
               <Social
                 img="./img/instagram.png"
@@ -113,11 +117,11 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div id="later" className="col-span-2 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
+        <div id="later" className="md:col-span-2 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
           <img src="./img/sprite.png" className="h-24" alt="sprite"/>
           <h1 className="text-md font-black text-center">⊹ Infos will be added later, I'm too lazy to develop ⊹</h1>
           </div>
-        <div className="col-span-3 row-span-1rounded-3xl p-4 flex items-center justify-center">
+        <div className="md:col-span-2 sm:col-span-1 row-span-1 rounded-3xl p-4 flex items-center justify-center">
           <h1 className="text-md font-black text-center">⊹ Created by Akihiko ⊹</h1>
         </div>
       </div>
