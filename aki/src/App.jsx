@@ -63,11 +63,11 @@ function Obsession(props) {
 }
 function Games(props) {
   return (
-    <div className="text-left uppercase">
+    <div className="text-left">
       <p className="text-md">
         {(props.activity === "active") && "🎮"}
         {(props.activity === "inactive") && "❌"}
-        {props.title}
+        <span className="uppercase">{props.title}</span>
         {(props.id !== "") && <p className="text-xs">ID: {props.id}</p>}
       </p>
     </div>
@@ -84,7 +84,7 @@ export default function App() {
         grid gap-3 p-3 
         border-font border-2 
         sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-        lg:m-32 md:m-16 sm:m-8 m-4"
+        lg:mx-32 md:mx-16 sm:mx-8 m-4"
       >
         <div id="header-profile" className="lg:col-span-1 md:col-span-2 sm:col-span-1 
         row-span-1 bg-bg rounded-3xl p-4">
@@ -98,16 +98,13 @@ export default function App() {
             <h1 className="font-black lg:text-2xl">⊹ Socials & Connections ⊹</h1>
             <div className="grid md:grid-cols-2 w-full">
               <Social img="./img/discord.png" alt="discord" name="@akihikooo" />
-              <Social
-                img="./img/instagram.png"
-                alt="instagram"
-                name="@akihikoooooooooo0"
+              <Social img="./img/instagram.png" alt="instagram" name="@akihikoooooooooo0"
               />
             </div>
           </div>
         </div>
         <div id="call"
-          className="col-span-1 row-span-1 bg-bg rounded-3xl p-4">
+          className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
           <h1 className="text-md font-black">Names to call me:</h1>
           <div className="grid grid-cols-2 gap-1">
             <p className="text-center">Akiera</p>
@@ -117,7 +114,7 @@ export default function App() {
             <p className="text-center">Xeno <i>(Tze-noh)</i></p>
           </div>
         </div>
-        <div id="obsession" className="col-span-1 row-span-2 bg-bg rounded-3xl p-4">
+        <div id="obsession" className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
           <h1 className="text-md font-black">Current Obsession:</h1>
           <div className="">
             <Obsession type="song" title="Backburner | NIKI"/>
@@ -126,10 +123,12 @@ export default function App() {
             <Obsession type="person" title="Mydei | Honkai Star Rail"/>
             <Obsession type="person" title="Dan Heng | Honkai Star Rail"/>
             <Obsession type="person" title="Caelus | Honkai Star Rail"/>
+            <Obsession type="person" title="Casper the Grim Reaper | A Date with Death"/>
+            <Obsession type="game" title="Realm of the Mad God Exalt"/>
           </div>
         </div>
         <div id="bio" 
-        className="col-span-1 row-span-4 bg-bg rounded-3xl p-4">
+        className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
           <div className="flex h-full flex-col">
             <h1 className="font-black text-xl text-center">⊹ Bio ⊹</h1>
             <p className="text-center">My 00:00 is your {twelve}</p>
@@ -145,11 +144,13 @@ export default function App() {
         className="col-span-1 row-span-2 bg-bg rounded-3xl p-4">
           <h1 className="text-md font-black">Games I play:</h1>
           <div className="grid grid-cols-1 gap-1">
+            <Games activity="active" title="Steam" id="Oikawaaa | 1179306644"/>
             <Games activity="inactive" title="Genshin Impact" id=""/>
             <Games activity="inactive" title="Roblox" id="kiiiiizenn"/>
-            <Games activity="active" title="Honkai Star Rail" id="839062833 (Asia)"/>
+            <Games activity="inactive" title="Honkai Star Rail" id="839062833 (Asia)"/>
             <Games activity="active" title="Mobile Legends: Bang Bang" id="723128711 (10339)"/>
             <Games activity="active" title="Minecraft" id="Ahnjiwon6091"/>
+            <Games activity="active" title="Realm of the Mad God Exalt" id="Akihikooooo"/>
             </div>
           </div>
         {/* <div id="projects" className="lg:col-span-1 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">

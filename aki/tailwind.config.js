@@ -14,10 +14,10 @@ export default {
       MontRSub:["Montserrat-SubrayadaR"]
     },
     colors: {
-      bg: 'hsl(166, 100%, 70%)',
-      muted: 'hsl(166, 100%, 95%)',
-      font: 'hsl(166, 100%, 20%)',
-      light: 'hsl(166, 100%, 90%)',
+      bg: 'hsl(0, 100%, 70%)',
+      muted: 'hsl(0, 100%, 95%)',
+      font: 'hsl(0, 100%, 20%)',
+      light: 'hsl(0, 100%, 90%)',
     }
   },
   },
