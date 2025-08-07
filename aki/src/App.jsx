@@ -159,6 +159,13 @@ export default function App() {
             <p className="text-center">Until the Last Sunset</p>
           </div>
           </div> */}
+          <div id="utls" className="col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
+            <a href="https://any.coop/A5ksiQdMuib9RBcG3gP6DuTYEYdAbiFRuugSKc8N8Awfgpkj/the-coldness-within">
+            <p className="text-center text-md font-black invert">
+              My hobby is to hurt me and everyone who reads this. <br/>[This is a link to my story, it's still a wip though.]
+            </p>
+            </a>
+          </div>
         <div id="later" className="lg:col-span-2 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
           <img src="./img/sprite.png" className="h-24" alt="sprite"/>
           <h1 className="text-md font-black text-center">⊹ Infos will be added later, I'm too lazy to develop ⊹</h1>
