@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Debug() {
   return (
     <div>
@@ -15,10 +14,14 @@ function Debug() {
 function Header() {
   return (
     <div className="w-full h-full bg-bg flex items-center p-2 rounded-3xl">
-      <img src="./img/pfp.jpeg" alt="pfp" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full" />
+      <img
+        src="./img/pfp.jpeg"
+        alt="pfp"
+        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full"
+      />
       <div id="details" className="flex flex-col justify-center ml-2 text-font">
         <h1 className="font-black text-lg sm:text-2xl">Akihiko Tanaka</h1>
-        <p id="bio">Escape the toxicity.</p>
+        <p id="bio">If not them, why not you?</p>
       </div>
     </div>
   );
@@ -49,7 +52,11 @@ function Obsession(props) {
     <div className="text-center uppercase">
       <p className="text-md">
         {(props.type === "music" || props.type === "song") && "🎧"}
-        {(props.type === "manga" || props.type === "book" || props.type === "manhua" || props.type === "manhwa") && "📖"}
+        {(props.type === "manga" ||
+          props.type === "book" ||
+          props.type === "manhua" ||
+          props.type === "manhwa") &&
+          "📖"}
         {props.type === "game" && "🎮"}
         {props.type === "anime" && "📺"}
         {props.type === "movie" && "🎬"}
@@ -65,16 +72,19 @@ function Games(props) {
   return (
     <div className="text-left">
       <p className="text-md">
-        {(props.activity === "active") && "🎮"}
-        {(props.activity === "inactive") && "❌"}
+        {props.activity === "active" && "🎮"}
+        {props.activity === "inactive" && "❌"}
         <span className="uppercase">{props.title}</span>
-        {(props.id !== "") && <p className="text-xs">ID: {props.id}</p>}
+        {props.id !== "" && <p className="text-xs">ID: {props.id}</p>}
       </p>
     </div>
   );
 }
 
-let twelve = new Date(1747238400 * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+let twelve = new Date(1747238400 * 1000).toLocaleTimeString([], {
+  hour: "2-digit",
+  minute: "2-digit",
+});
 
 export default function App() {
   return (
@@ -86,49 +96,67 @@ export default function App() {
         sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
         lg:mx-32 md:mx-16 sm:mx-8 m-4"
       >
-        <div id="header-profile" className="lg:col-span-1 md:col-span-2 sm:col-span-1 
-        row-span-1 bg-bg rounded-3xl p-4">
+        <div
+          id="header-profile"
+          className="lg:col-span-1 md:col-span-2 sm:col-span-1 
+        row-span-1 bg-bg rounded-3xl p-4"
+        >
           <Header />
         </div>
-        <div id="socials"
+        <div
+          id="socials"
           className="md:col-span-2 row-span-1 
           bg-bg rounded-3xl p-4"
         >
           <div className="flex h-full flex-col">
-            <h1 className="font-black lg:text-2xl">⊹ Socials & Connections ⊹</h1>
+            <h1 className="font-black lg:text-2xl">
+              ⊹ Socials & Connections ⊹
+            </h1>
             <div className="grid md:grid-cols-2 w-full">
               <Social img="./img/discord.png" alt="discord" name="@akihikooo" />
-              <Social img="./img/instagram.png" alt="instagram" name="@akihikoooooooooo0"
+              <Social
+                img="./img/instagram.png"
+                alt="instagram"
+                name="@akihikoooooooooo0"
               />
             </div>
           </div>
         </div>
-        <div id="call"
-          className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
+        <div
+          id="call"
+          className="col-span-1 row-span-auto bg-bg rounded-3xl p-4"
+        >
           <h1 className="text-md font-black">Names to call me:</h1>
           <div className="grid grid-cols-2 gap-1">
             <p className="text-center">Akiera</p>
             <p className="text-center">Aki</p>
             <p className="text-center">Akihiko</p>
             <p className="text-center">Kizen</p>
-            <p className="text-center">Xeno <i>(Tze-noh)</i></p>
+            <p className="text-center">
+              Xeno <i>(Tze-noh)</i>
+            </p>
           </div>
         </div>
-        <div id="obsession" className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
+        <div
+          id="obsession"
+          className="col-span-1 row-span-auto bg-bg rounded-3xl p-4"
+        >
           <h1 className="text-md font-black">Current Obsession:</h1>
           <div className="">
-            <Obsession type="song" title="Backburner | NIKI"/>
-            <Obsession type="artist" title="Lady Gaga"/>
-            <Obsession type="album" title="MAYHEM | Lady Gaga"/>
-            <Obsession type="person" title="Mydei | Honkai Star Rail"/>
-            <Obsession type="person" title="Dan Heng | Honkai Star Rail"/>
-            <Obsession type="person" title="Caelus | Honkai Star Rail"/>
-            <Obsession type="person" title="Casper the Grim Reaper | A Date with Death"/>
-            <Obsession type="game" title="Realm of the Mad God Exalt"/>
+            <Obsession type="person" title="Mydei | Honkai Star Rail" />
+            <Obsession type="person" title="Dan Heng | Honkai Star Rail" />
+            <Obsession type="person" title="Caelus | Honkai Star Rail" />
+            <Obsession type="person" title="Brant | Wuthering Waves" />
+            <Obsession
+              type="person"
+              title="Casper the Grim Reaper | A Date with Death"
+            />
           </div>
         </div>
-        <div id="bio" 
-        className="col-span-1 row-span-auto bg-bg rounded-3xl p-4">
+        <div
+          id="bio"
+          className="col-span-1 row-span-auto bg-bg rounded-3xl p-4"
+        >
           <div className="flex h-full flex-col">
             <h1 className="font-black text-xl text-center">⊹ Bio ⊹</h1>
             <p className="text-center">My 00:00 is your {twelve}</p>
@@ -136,42 +164,81 @@ export default function App() {
               <BioD bio="Birthdate" value="May 15" />
               <BioD bio="Pronouns" value="He/Him, She/Her, They/Them" />
               <BioD bio="Language" value="English, Filipino" />
-              <BioD bio="MBTI" value="INTP-T" />
+              <BioD bio="MBTI" value="INTP-F" />
             </div>
           </div>
         </div>
-        <div id="games"
-        className="col-span-1 row-span-2 bg-bg rounded-3xl p-4">
+        <div id="games" className="col-span-1 row-span-2 bg-bg rounded-3xl p-4">
           <h1 className="text-md font-black">Games I play:</h1>
           <div className="grid grid-cols-1 gap-1">
-            <Games activity="active" title="Steam" id="Oikawaaa | 1179306644"/>
-            <Games activity="inactive" title="Genshin Impact" id=""/>
-            <Games activity="inactive" title="Roblox" id="kiiiiizenn"/>
-            <Games activity="inactive" title="Honkai Star Rail" id="839062833 (Asia)"/>
-            <Games activity="active" title="Mobile Legends: Bang Bang" id="723128711 (10339)"/>
-            <Games activity="active" title="Minecraft" id="Ahnjiwon6091"/>
-            <Games activity="active" title="Realm of the Mad God Exalt" id="Akihikooooo"/>
-            </div>
+            <Games activity="active" title="Steam" id="Oikawaaa | 1179306644" />
+            <Games activity="inactive" title="Genshin Impact" id="" />
+            <Games activity="inactive" title="Roblox" id="kiiiiizenn" />
+            <Games
+              activity="inactive"
+              title="Honkai Star Rail"
+              id="839062833 (Asia)"
+            />
+            <Games
+              activity="active"
+              title="Mobile Legends: Bang Bang"
+              id="723128711 (10339)"
+            />
+            <Games activity="active" title="Minecraft" id="Ahnjiwon6091" />
+            <Games
+              activity="inactive"
+              title="Realm of the Mad God Exalt"
+              id="Akihikooooo"
+            />
+            <Games
+              activity="active"
+              title="Honor of Kings"
+              id="12750767056810516691"
+            />
+            <Games
+              activity="active"
+              title="Valorant (babambabam)"
+              id="aki昭彦#aki"
+            />
           </div>
+        </div>
         {/* <div id="projects" className="lg:col-span-1 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
           <h1 className="text-md font-black text-center">⊹ Projects ⊹</h1>
           <div className="grid grid-cols-1 gap-1">
             <p className="text-center">Until the Last Sunset</p>
           </div>
           </div> */}
-          <div id="utls" className="col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
-            <a href="https://any.coop/A5ksiQdMuib9RBcG3gP6DuTYEYdAbiFRuugSKc8N8Awfgpkj/the-coldness-within">
+        <div
+          id="utls"
+          className="col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center"
+        >
+          <a href="https://any.coop/A5ksiQdMuib9RBcG3gP6DuTYEYdAbiFRuugSKc8N8Awfgpkj/the-coldness-within">
             <p className="text-center text-md font-black invert">
-              My hobby is to hurt me and everyone who reads this. <br/>[This is a link to my story, it's still a wip though.]
+              My hobby is to hurt me and everyone who reads this. <br />
+              [This is a link to my story, it's still a wip though.]
             </p>
-            </a>
-          </div>
-        <div id="later" className="lg:col-span-2 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center">
-          <img src="./img/sprite.png" className="h-24" alt="sprite"/>
-          <h1 className="text-md font-black text-center">⊹ Infos will be added later, I'm too lazy to develop ⊹</h1>
-          </div>
+          </a>
+        </div>
+        <div
+          id="annon"
+          className="col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center"
+        >
+          <a href="https://formcord.app/1486774755691462769/2C9BqgwYKV">Message of the press link.</a>
+          <a href="https://formcord.app/1486774755691462769/trARsqo2Pa">Annonymous Confessions</a>
+        </div>
+        <div
+          id="later"
+          className="lg:col-span-2 sm:col-span-1 row-span-1 bg-bg rounded-3xl p-4 flex items-center"
+        >
+          <img src="./img/sprite.jpeg" className="h-24" alt="sprite" />
+          <h1 className="text-md font-black text-center">
+            ⊹ Infos will be added later, I'm too lazy to develop ⊹
+          </h1>
+        </div>
         <div className="md:col-span-2 sm:col-span-1 row-span-1 rounded-3xl p-4 flex items-center justify-center">
-          <h1 className="text-md font-black text-center">⊹ Created by Akihiko ⊹</h1>
+          <h1 className="text-md font-black text-center">
+            ⊹ Created by Akihiko ⊹
+          </h1>
         </div>
       </div>
     </div>
